@@ -15,12 +15,8 @@ print('Challenge 1 -------------')
 import csv
 roster_file = open('athletics_40_roster.csv')
 for row in csv.DictReader(roster_file):
-    print(row['Name'])
-    print(row['Uniform'])
-    print(row['Age'])
-    print(row['Weight'])
-    print(row['Height'])
-    print(row['Date of Birth'])
+    print(row['Name'], row['Uniform'], row['Age'], 
+    row['Weight'], row['Height'], row['Date of Birth'])
 
 
 print('Challenge 2 -------------')
