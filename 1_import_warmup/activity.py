@@ -1,4 +1,4 @@
-print('hello templating')
+# print('hello templating')
 
 print('Challenge 1 -------------')
 # Challenge #1:
@@ -12,11 +12,17 @@ print('Challenge 1 -------------')
 # 3. Modify the code to print the name ('Name'), uniform number ('Uniform'),
 # age, weight, height, and date of birth, all on one line.
 
-import csv
-roster_file = open('athletics_40_roster.csv')
-for row in csv.DictReader(roster_file):
-    print(row['Name'], row['Uniform'], row['Age'], 
-    row['Weight'], row['Height'], row['Date of Birth'])
+# roster_file = open('athletics_40_roster.csv')
+# for row in csv.DictReader(roster_file):
+#     print(row['Name'])
+#     print(row['Uniform'])
+
+## Answer ##
+# import csv
+# roster_file = open('athletics_40_roster.csv')
+# for row in csv.DictReader(roster_file):
+#     print(row['Name'], row['Uniform'], row['Age'], 
+#     row['Weight'], row['Height'], row['Date of Birth'])
 
 
 print('Challenge 2 -------------')
@@ -38,7 +44,11 @@ print('Challenge 2 -------------')
 #value == 3 * ureg.meter + 4 * ureg.inches
 #print value
 
-
+## Answer ##
+import pint
+ureg = pint.UnitRegistry()
+value = 3 * ureg.meter + 4 * ureg.inches
+print(value)
 
 
 print('Challenge 3 -------------')
@@ -50,7 +60,8 @@ print('Challenge 3 -------------')
 # weight_in_kilograms = weight_in_pounds.to(ureg.kilograms)
 # HINT #2: If you write a new for-loop, you may need to "re-open" the file
 
-
+# weight_in_pounds = float(row['Weight']) * ureg.pounds
+# weight_in_kilograms = weight_in_pounds.to(ureg.kilograms)
 
 
 print('Challenge 4 -------------')
