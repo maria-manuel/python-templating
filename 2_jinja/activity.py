@@ -120,16 +120,43 @@ print('Challenge 5 -------------')
 # https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-builtin-filters
 
 
+# template_code = '''
+# All noodles: {{ noodles|join(', ') }}
+# Alphabetical:
+# Reverse alphabetical:
+# First:
+# Last, with a capital letter:
+# First alphabetically:
+# Last alphabetically:
+# Number of different types of noodles:
+# '''
+
+# noodles_list = [
+#     'soba',
+#     'ramen',
+#     'lo mein',
+#     'spaghetti',
+#     'jap chae',
+#     'vermicelli',
+#     'gnocchi',
+# ]
+
+# results = Template(template_code).render({
+#     'noodles': noodles_list,
+# })
+
+# #print(results)
+
 template_code = '''
-All noodles: {{ noodles|join(', ') }}
-Alphabetical:
-Reverse alphabetical:
-First:
-Last, with a capital letter:
-First alphabetically:
-Last alphabetically:
-Number of different types of noodles:
-'''
+# All noodles: {{ noodles|join(', ') }}
+# Alphabetical: {{ noodles|sort|join(', ') }}
+# Reverse alphabetical: {{ noodles|sort|reverse|join(', ') }}
+# First: {{noodles|first }}
+# Last, with a capital letter: {{ noodles|last|title }}
+# First alphabetically: {{ noodles|sort|first }}
+# Last alphabetically: {{ noodles|sort|last }}
+# Number of different types of noodles: {{ noodles|length }}
+# '''
 
 noodles_list = [
     'soba',
@@ -145,7 +172,7 @@ results = Template(template_code).render({
     'noodles': noodles_list,
 })
 
-#print(results)
+print(results)
 
 
 
