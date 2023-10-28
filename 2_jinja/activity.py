@@ -69,10 +69,6 @@ templated_results = food_template.render({
 print(templated_results)
 
 
-
-
-
-
 print('Challenge 4 -------------')
 # Challenge 4:
 # 1. Uncomment the print function invocation.
@@ -86,6 +82,17 @@ print('Challenge 4 -------------')
 # Hint 3: You might find helpful this description of built-in filters:
 # https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-builtin-filters
 
+# template_code = '''
+# <h1>{{ title }}</h1>
+# <p>My blog posts:</p>
+# <h2>{{ blog_post_titles|first|title }}</h2>
+# <h2>{{ blog_posts|first|truncate }}</h2>
+# '''
+# context = {
+# }
+
+#print(Template(template_code).render(context))
+
 template_code = '''
 <h1>{{ title }}</h1>
 <p>My blog posts:</p>
@@ -93,10 +100,12 @@ template_code = '''
 <h2>{{ blog_posts|first|truncate }}</h2>
 '''
 context = {
+    'title': 'The Matrix Resurrections',
+    'blog_post_titles': ['Project Ice-Cream', 'Chinatown Visit'],
+    'blog_posts': ['Actor, Keanu Reeves, visits the San Francisco Bay Area. The Matrix is being filmed in the Financial District and Chinatown areas. There have been numerous reportings of the actor seen as humbly confident while eating ice-cream.'],
 }
 
-#print(Template(template_code).render(context))
-
+print(Template(template_code).render(context))
 
 
 print('Challenge 5 -------------')
