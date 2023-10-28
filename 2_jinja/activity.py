@@ -1,5 +1,7 @@
 # REMINDER: Only do one challenge at a time! Save and test after every one.
 
+print('jinja activity')
+
 print('Challenge 1 -------------')
 # Challenge 1:
 # 1. As with the previous activity, create a new virtualenv using pipenv
@@ -12,15 +14,15 @@ from jinja2 import Template
 
 template = Template('Hello, {{ name }}!')
 result = template.render({
-    'name': 'Joan',
+    'name': 'Keanu',
 })
 print(result)
 
 
-print('Challenge 2 -------------')
-# Challenge 2:
-# Using Challenge 1 as a clue, write the code to utilize this template to
-# render your own name, favorite color, favorite food, and favorite book.
+# print('Challenge 2 -----------')
+# # Challenge 2:
+# # Using Challenge 1 as a clue, write the code to utilize this template to
+# # render your own name, favorite color, favorite food, and favorite book.
 
 user_information_template = Template('''
 <p>Name: {{ name }}</p>
@@ -29,10 +31,16 @@ user_information_template = Template('''
 <p>Favorite book: {{ book }}</p>
 ''')
 
+result = user_information_template.render({
+    'name': 'Keanu',
+    'color': 'Green',
+    'food': 'Tacos',
+    'book': 'Lord of the Rings'
+})
+print(result)
 
 
-
-print('Challenge 3 -------------')
+print('Challenge 3 -----------')
 # Challenge 3:
 # 1. Uncomment the print function invocation.
 # 2. By only modifying the template code string, replace the question marks to
@@ -41,8 +49,8 @@ print('Challenge 3 -------------')
 # The first done is done for you.
 
 template_code = '''
-Healthy foods: {{ foods.fruit }}, ?, ?
-Junk foods: ?, ?, ?
+Healthy foods: {{ foods.fruit }}, {{foods.vegetable}}, {{foods.cold_dish}}
+Junk foods: {{foods.sandwhich}}, {{foods.drink}}, {{foods.snack}}
 '''
 
 food_template = Template(template_code)
@@ -58,7 +66,7 @@ foods_info = {
 templated_results = food_template.render({
     'foods': foods_info
 })
-# print(templated_results)
+print(templated_results)
 
 
 

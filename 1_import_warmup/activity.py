@@ -18,11 +18,11 @@ print('Challenge 1 -------------')
 #     print(row['Uniform'])
 
 ## Answer ##
-# import csv
-# roster_file = open('athletics_40_roster.csv')
-# for row in csv.DictReader(roster_file):
-#     print(row['Name'], row['Uniform'], row['Age'], 
-#     row['Weight'], row['Height'], row['Date of Birth'])
+import csv
+roster_file = open('athletics_40_roster.csv')
+for row in csv.DictReader(roster_file):
+    print(row['Name'], row['Uniform'], row['Age'], 
+    row['Weight'], row['Height'], row['Date of Birth'])
 
 
 print('Challenge 2 -------------')
@@ -39,16 +39,16 @@ print('Challenge 2 -------------')
 # 5. Each of the commented lines has a mistake. Uncomment the following code
 #    and fix the mistakes to get this example test usage of Pint working:
 
-#import(pint)
-#ureg = pint UnitRegistry()
-#value == 3 * ureg.meter + 4 * ureg.inches
-#print value
+# import(pint)
+# ureg = pint UnitRegistry()
+# value == 3 * ureg.meter + 4 * ureg.inches
+# print value
 
-## Answer ##
-# import pint
-# ureg = pint.UnitRegistry()
-# value = 3 * ureg.meter + 4 * ureg.inches
-# print(value)
+# Answer ##
+import pint
+ureg = pint.UnitRegistry()
+value = 3 * ureg.meter + 4 * ureg.inches
+print(value)
 
 
 print('Challenge 3 -------------')
@@ -60,20 +60,29 @@ print('Challenge 3 -------------')
 # weight_in_kilograms = weight_in_pounds.to(ureg.kilograms)
 # HINT #2: If you write a new for-loop, you may need to "re-open" the file
 
-roster_file = open('athletics_40_roster.csv')
-for row in csv.DictReader(roster_file):
-    weight_in_pounds = float(row['Weight']) * ureg.pounds
-    weight_in_kilograms = weight_in_pounds.to(ureg.kilograms)
-    print(row['Name'], row['Uniform'], row['Age'], 
-
-
+## Answer ##
+# roster_file = open('athletics_40_roster.csv')
+# for row in csv.DictReader(roster_file):
+#     weight_in_pounds = float(row['Weight']) * ureg.pounds
+#     weight_in_kilograms = weight_in_pounds.to(ureg.kilograms)
+#     print(row['Name'], row['Uniform'], row['Age']) 
 
 
 print('Challenge 4 -------------')
 # Challenge #4:
 # Now, calculate the average weight of the baseball players, in kilograms.
 
+total = 0
+roster_file = open('athletics_40_roster.csv')
+for row in csv.DictReader(roster_file):
+    weight_in_pounds = float(row['Weight']) * ureg.pounds
+    weight_in_kilograms = weight_in_pounds.to(ureg.kilograms)
+    total = total + weight_in_kilograms
 
+print('total weight: ', total)
+
+print('average weight: ', total / 40) 
+          
 
 # EXTRA BONUS CHALLENGE:
 # Check out the bonus_pypi_practice/ directory for the activities from last
