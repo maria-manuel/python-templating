@@ -55,30 +55,49 @@ print('Challenge 2 -------------')
 # movies, printing their titles, summaries, and noting movies that are
 # unusually long.
 
+# import json
+# movie_data = json.load(open('movies.json'))
+
+# template_string = '''
+# {{ for movie in movies }}
+#     -------------------------------
+#     - { movie.title }
+#     Facts:
+#         Title: {{ movie title }}
+#         Summary: movie.summary
+#     {% if movie.length > 150 % }
+#         Really Long: This movie is over 2.5 hours, yikes!
+#     {% end %}
+# {{ endfor }}
+# '''
+
+# #movies_information_template = Template(template_string)
+# #result = movies_information_template.render({
+# #    'movies': movie_data,
+# #})
+# #print(result)
+
 import json
 movie_data = json.load(open('movies.json'))
 
 template_string = '''
-{{ for movie in movies }}
+{% for movie in movies %}
     -------------------------------
-    - { movie.title }
+    - {{ movie.title }}
     Facts:
-        Title: {{ movie title }}
-        Summary: movie.summary
-    {% if movie.length > 150 % }
+        Title: {{ movie.title }}
+        Summary: {{ movie.summary }}
+    {% if movie.length > 150 %}
         Really Long: This movie is over 2.5 hours, yikes!
-    {% end %}
-{{ endfor }}
+    {% endif %}
+{% endfor %}
 '''
 
-#movies_information_template = Template(template_string)
-#result = movies_information_template.render({
-#    'movies': movie_data,
-#})
-#print(result)
-
-
-
+movies_information_template = Template(template_string)
+result = movies_information_template.render({
+    'movies': movie_data,
+})
+print(result)
 
 
 print('Challenge 3 -------------')
