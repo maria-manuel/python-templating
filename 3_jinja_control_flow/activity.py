@@ -9,6 +9,20 @@ print('Challenge 1 -------------')
 # every line is doing. Change it to say "Activity 1 is ready!" (Should be done
 # without modifying the template itself.)
 
+# from jinja2 import Template
+
+# template = Template('''
+# {% if is_ready %}
+#     Activity 1 is ready!
+# {% else %}
+#     Activity 1 is not yet ready...
+# {% endif %}
+# ''')
+# result = template.render({
+#     'is_ready': False,
+# })
+# print(result)
+
 from jinja2 import Template
 
 template = Template('''
@@ -19,9 +33,13 @@ template = Template('''
 {% endif %}
 ''')
 result = template.render({
-    'is_ready': False,
+    'is_ready': True,
 })
 print(result)
+
+# Answer: 
+# Part One: 1. open terminal, 2. pipenv --python3, 3. pipenv shell, 4. pipenv install jinja2
+# Part Two: Change False to True so code will print "Activity 1 is not ready!"
 
 
 

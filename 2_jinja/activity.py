@@ -183,4 +183,3 @@ print('-------------')
 # 2. Using "input", make a game that asks the user the necessary questions to
 # assemble the story from user answers.
 # 3. Write the results to a new file.
-
