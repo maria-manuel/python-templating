@@ -147,7 +147,10 @@ players = json.load(open('athletics.json'))
 template_string = '''
     Players
     {% for player in players %}
-        {{ player }}
+        {{ player.Name }}
+        {%- if player['First Year'] > 2010 %}
+            Newer player
+        {% endif %}
     {% endfor %}
 '''
 
