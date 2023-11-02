@@ -114,6 +114,22 @@ print('Challenge 3 -------------')
 
 # (Some excess space or extra lines are okay.)
 
+import json
+movie_data = json.load(open('movies.json'))
+
+template_string = '''
+{% for movie in movies %}
+    -------------------------------
+    - {{ movie.title }}
+
+{% endfor %}
+'''
+
+movies_information_template = Template(template_string)
+result = movies_information_template.render({
+    'movies': movie_data,
+})
+print(result)
 
 
 
