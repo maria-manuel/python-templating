@@ -154,9 +154,12 @@ template_string = '''
     {% if player.Bat == 'R' and player.Throw == 'R' -%}
             BOTH: Right
         {% endif %}
-    {% if player.Bat == 'L' and player. Throw == 'L' -%}
+    {% if player.Bat == 'L' and player.Throw == 'L' -%}
             Both: Left
         {% endif %}
+    {% if player.Bat == 'R' and player.Throw == 'L' -%}
+            Right, Bat - Left, Throw
+            {% endif %}
     {% endfor %}
 '''
 
