@@ -151,6 +151,9 @@ template_string = '''
         {%- if player['First Year'] > 2010 %}
             Newer player
         {% endif %}
+    {% if player.Bat == 'R' and player.Throw == 'R' -%}
+            BOTH: Right
+        {% endif %}
     {% endfor %}
 '''
 
