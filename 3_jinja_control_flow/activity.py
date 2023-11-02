@@ -131,9 +131,6 @@ result = movies_information_template.render({
 print(result)
 
 
-
-
-
 print('Challenge 4 -------------')
 # Challenge 4:
 # This is tough challenge!
@@ -147,7 +144,15 @@ print('Challenge 4 -------------')
 # Hint: The data is in the format of "Bat": "R", and "Throw": "L"
 players = json.load(open('athletics.json'))
 
+template_string = '''
+    Players
+'''
 
+player_template = Template(template_string)
+result = player_template.render({
+    'players': players,
+})
+print(result)
 
 
 
