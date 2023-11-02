@@ -146,6 +146,9 @@ players = json.load(open('athletics.json'))
 
 template_string = '''
     Players
+    {% for player in players %}
+        {{ player }}
+    {% endfor %}
 '''
 
 player_template = Template(template_string)
