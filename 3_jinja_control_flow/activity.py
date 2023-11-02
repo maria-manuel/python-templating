@@ -121,7 +121,7 @@ template_string = '''
 {% for movie in movies %} 
     - {{ movie.title }} | {{ movie.length }} min
 
-{% endfor %}
+{%- endfor %}
 '''
 
 movies_information_template = Template(template_string)
