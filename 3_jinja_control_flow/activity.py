@@ -118,9 +118,8 @@ import json
 movie_data = json.load(open('movies.json'))
 
 template_string = '''
-{% for movie in movies %}
-    -------------------------------
-    - {{ movie.title }}
+{% for movie in movies %} 
+    - {{ movie.title }} | {{ movie.length }} min
 
 {% endfor %}
 '''
