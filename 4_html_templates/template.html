@@ -11,14 +11,19 @@
     <h2>By {{ author }}</h2>
 
     <hr />
-    <hr />
+
+    <h4>Chapter count: {{chapters|length}}</h4>
 
     <h3>Table of Contents</h3>
     <ol>
-        <li> TODO...</li>
+        {% for chapter in chapters %}
+            <li>{{ chapter|first }}</li>
+        {% endfor %}
     </ol>
 
-    <h2>Chapter 1</h2>
+    {% for chapter in chapters %}
+        <h2>{{ chapter|first }} </h2>
+    {% endfor %}
     <p>Okay this all needs to be replaced...</p>
 </body>
 </html>
