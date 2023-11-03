@@ -23,7 +23,9 @@
 
     {% for chapter in chapters %}
         <h2>{{ chapter|first }} </h2>
+        {% for paragraph in chapter|last %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
     {% endfor %}
-    <p>Okay this all needs to be replaced...</p>
 </body>
 </html>
