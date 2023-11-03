@@ -1,6 +1,8 @@
 from jinja2 import Template
 import json
 
+print('building book')
+
 # Read in book's data. It's in the format of lists of lists of lists.
 wonderland_parsed = json.load(open('wonderland.json'))
 

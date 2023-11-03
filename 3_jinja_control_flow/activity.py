@@ -150,19 +150,15 @@ template_string = '''
         {{ player.Name }}
         {%- if player['First Year'] > 2010 %}
             Newer player
-        {% endif %}
-    {% if player.Bat == 'R' and player.Throw == 'R' -%}
+        {% elif player.Bat == 'R' and player.Throw == 'R' %}
             BOTH: Right
-        {% endif %}
-    {% if player.Bat == 'L' and player.Throw == 'L' -%}
+        {% elif player.Bat == 'L' and player.Throw == 'L' %}
             Both: Left
-        {% endif %}
-    {% if player.Bat == 'R' and player.Throw == 'L' -%}
+        {% elif player.Bat == 'R' and player.Throw == 'L' %}
             Right, Bat - Left, Throw
-            {% endif %}
-    {% if player.Bat == 'L' and player.Throw == 'R' -%}
+        {% elif player.Bat == 'L' and player.Throw == 'R' %}
             Left, Bat - Right, Throw
-            {% endif -%}
+        {% endif -%}
     {% endfor %}
 '''
 
