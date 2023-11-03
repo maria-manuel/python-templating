@@ -21,9 +21,9 @@
         {% endfor %}
     </ol>
 
-    {% for chapter in chapters %}
-        <h2>{{ chapter|first }} </h2>
-        {% for paragraph in chapter|last %}
+    {% for chapter_title, paragraph_list in chapters %}
+        <h2>{{ chapter_title }} </h2>
+        {% for paragraph in paragraph_list %}
             <p>{{ paragraph }}</p>
         {% endfor %}
     {% endfor %}
